@@ -4,10 +4,8 @@ import { useFormik } from 'formik'
 import { postPostAPI } from '../../../services/postServices'
 import './PostPage.css'
 import { Alert, Button } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
 
 const PostPage = ({user}) => {
-    const navigate = useNavigate()
 
     const {mutateAsync,isPending,isError,error,isSuccess} = useMutation({
         mutationFn: postPostAPI,

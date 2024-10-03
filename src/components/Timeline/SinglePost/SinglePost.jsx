@@ -18,7 +18,7 @@ const SinglePost = () => {
         queryKey: ['post',_id]
     })
     
-    const {data: commentData, isError, isLoading, error} = useQuery({
+    const {data: commentData, isError, isLoading} = useQuery({
       queryFn:() => getCommentsAPI(_id),
       queryKey: ['comment', _id]
     })
@@ -29,6 +29,12 @@ const SinglePost = () => {
       <>
        <Navbar/>
       <div className = 'single-post-body'>
+        {isError && <div>
+                      <h1>Error loading data!</h1>
+                    </div>}
+        {isLoading && <div>
+                        <h1>Loading data.</h1>
+                      </div>}
         <Card className = 'single-post-card'>
           <Card.Header>
             <img className = 'single-post-user-img' src = {post.author?.image} alt = 'user'/>

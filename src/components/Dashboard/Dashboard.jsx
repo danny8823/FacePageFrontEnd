@@ -4,7 +4,7 @@ import './Dashboard.css'
 import { Button, Card, Modal } from 'react-bootstrap'
 import { useQuery } from '@tanstack/react-query'
 import { deletePostAPI, getPostsByAuthorAPI } from '../../services/postServices'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import UpdateProfile from './UpdateProfile.jsx/UpdateProfile'
 import UpdatePassword from './UpdatePassword/UpdatePassword'
 
@@ -19,7 +19,7 @@ const Dashboard = () => {
     const handleOpen1 = () => setShow1(true)
 
     const {user} = useSelector((state) => state?.auth?.user)
-    const {data: post, isError, isLoading, error} = useQuery({
+    const {data: post, isError, isLoading} = useQuery({
         queryFn: () => getPostsByAuthorAPI(user._id),
         queryKey: ['post', user._id]
     })
@@ -84,22 +84,14 @@ const Dashboard = () => {
                     <h1>No posts....yet</h1>
                 </div>
                 )}
-                {/* {post?.map((item) => (
-                    <Card key = {item._id} className = 'dashboard-post-card'>
-                        <Card.Title className = 'card-title-container'>
-                            <span>
-                                {item.title} 
-                            </span>
-                            <span className = 'post-date'>{new Date(item.createdAt).toLocaleString()}</span>
-                        </Card.Title>
-                        <Card.Body>
-                            {item.content}
-                        </Card.Body>
-                        <Card.Footer>
-                            <Button variant='outline-primary' onClick={()=>deleteButtonHandler(item._id)}>Delete</Button>
-                        </Card.Footer>
-                    </Card>
-               ))} */}
+                {isError && 
+                    <div>
+                        <p>Error loading data!</p>
+                    </div>}
+                {isLoading && 
+                    <div>
+                        <p>Loading!</p>    
+                    </div>}
             </div>
         </div>
     </div>
