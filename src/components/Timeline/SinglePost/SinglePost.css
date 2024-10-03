@@ -1,0 +1,33 @@
+.single-post-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: whitesmoke;
+}
+.single-post-card {
+    width: 40%;
+    margin: 20px;
+}
+
+.single-post-user-img {
+    width: 20px;
+    margin: 0 5px 0 5px;
+    border-radius: 10px;
+}
+
+.comment-card {
+    width: 40%;
+    margin: 20px;
+}
+
+@media (max-width: 700px) {
+    .single-post-card {
+        width: 80vw;
+    }
+
+    .comment-card {
+        width: 80vw;
+    }
+}

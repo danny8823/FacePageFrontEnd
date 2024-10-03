@@ -1,0 +1,89 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 10px 0 10px;
+    height: 100vh;
+    min-width: 100vw;
+    background-color: whitesmoke;
+}
+
+.home-welcome-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+}
+
+.home-welcome-card > h1 {
+    margin: 10px 0 10px 0;
+    font-size: 70px;
+    color: dodgerblue;
+}
+
+.home-welcome-card > p {
+    margin: 10px 0 10px 0;
+    font-size: 30px;
+}
+
+.home-login-card {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.25)
+}
+
+form{
+    display: flex;
+    flex-direction: column 
+}
+
+.form-input {
+    height: 40px;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+    flex-grow: 1;
+}
+
+.logo {
+    background-color: whitesmoke;
+}
+
+@media (max-width: 600px) {
+    .home-container {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .home-welcome-card {
+        width: 100vw;
+        margin: 0 auto;
+        padding-left: 50px;
+    }
+    .home-welcome-card > h1 {
+        font-size: 40px;
+    }
+
+    .home-welcome-card > img {
+        width: 100px;
+    }
+
+    .home-welcome-card > p {
+        font-size: 20px;
+    }
+
+    .home-login-card {
+        width: 300px;
+    }
+}

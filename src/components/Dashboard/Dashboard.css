@@ -1,0 +1,97 @@
+.dashboard-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: whitesmoke;
+    min-height: 100vh;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 30%;
+    height: 100%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.profile-card > p {
+    margin: 5px 0 5px 0;
+}
+
+.profile-card > button {
+    margin: 2px 5px 0 0;
+    display: inline;
+}
+
+.profile-card > img {
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border-radius: 100%;
+}
+
+.dashboard-post-card {
+    width: 70%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.user-posts-container {
+    margin:10px;
+}
+
+.card-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-date {
+    font-size: 12px;
+}
+
+@media (max-width:700px) {
+    .profile-card {
+        width: 40%;
+        margin: 10px;
+    }
+
+    .profile-card > p {
+        font-size: 12px;
+    }
+
+    .profile-card > button {
+        font-size: 12px;
+    }
+
+    .profile-card > img {
+        width: 100px;
+        height: auto;
+    }
+
+    .user-posts-container {
+        width: 60%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dashboard-post-card {
+        width: 70%;
+        margin: 10px;
+    }
+
+    .card-title-container > span {
+        font-size: 12px;
+    }
+
+    .dashboard-post-content {
+        font-size: 14px;
+    }
+
+    .dash-button {
+        font-size: 12px;
+    }
+}
