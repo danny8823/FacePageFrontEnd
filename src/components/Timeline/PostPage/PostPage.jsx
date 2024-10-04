@@ -24,7 +24,7 @@ const PostPage = ({user}) => {
             mutateAsync(values)
                 .then((data)=>{
                     console.log('this is post data', data)
-                    window.location.reload()
+                    
                 })
                 .catch((error) => {
                     console.log('this is error', error)
