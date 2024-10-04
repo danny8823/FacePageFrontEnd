@@ -24,8 +24,8 @@ const Dashboard = () => {
         queryKey: ['post', user._id]
     })
 
-    const deleteButtonHandler = (id) => {
-        deletePostAPI(id)
+    const deleteButtonHandler = async (id) => {
+        await deletePostAPI(id)
         window.location.reload()
     }
     
