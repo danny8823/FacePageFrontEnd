@@ -34,7 +34,7 @@ const Timeline = () => {
           {isError && <p>{error.message}</p>}
           <PostCard user = {user}/>
             {posts?.map((post) => (
-              <Card key = {post._id} className = 'post'>
+              <Card key = {post?._id} className = 'post'>
                 <Card.Header className = 'timeline-card-header'>
                   <div>
                     <img className = 'user-img' src = {user?.image} alt = 'face-image'/>
@@ -49,7 +49,7 @@ const Timeline = () => {
                     {post.title}
                   </Card.Title>
                   <Card.Text className = 'post-content'>
-                    {post.image && <img className = 'post-image' src = {post?.image} alt = 'post'/>}
+                    {post.image && <img className = 'post-image' src = {post.image} alt = 'post'/>}
                     {post.content}
                   </Card.Text>
                   <Card.Text>
