@@ -37,11 +37,11 @@ const Timeline = () => {
               <Card key = {post._id} className = 'post'>
                 <Card.Header className = 'timeline-card-header'>
                   <div>
-                    <img className = 'user-img' src = {user.image} alt = 'face-image'/>
-                    <span className = 'user-name'>{post.author.username}</span>
+                    <img className = 'user-img' src = {user?.image} alt = 'face-image'/>
+                    <span className = 'user-name'>{post?.author?.username}</span>
                   </div>
                   <div>
-                    <span className = 'post-date'>Created at: {new Date(post.createdAt).toLocaleString()}</span>
+                    <span className = 'post-date'>Created at: {new Date(post?.createdAt).toLocaleString()}</span>
                   </div>
                 </Card.Header>
                 <Card.Body>
@@ -49,11 +49,11 @@ const Timeline = () => {
                     {post.title}
                   </Card.Title>
                   <Card.Text className = 'post-content'>
-                    {post.image && <img className = 'post-image' src = {post.image} alt = 'post'/>}
+                    {post.image && <img className = 'post-image' src = {post?.image} alt = 'post'/>}
                     {post.content}
                   </Card.Text>
                   <Card.Text>
-                    <Button onClick={()=>{goToComment(post._id)}}>Comment<Badge bg='seconday'>{post.comments}</Badge></Button>
+                    <Button onClick={()=>{goToComment(post?._id)}}>Comment<Badge bg='seconday'>{post?.comments}</Badge></Button>
                   </Card.Text>
                 </Card.Body>
               </Card>
