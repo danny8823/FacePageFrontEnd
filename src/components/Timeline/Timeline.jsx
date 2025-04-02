@@ -46,11 +46,11 @@ const Timeline = () => {
                 </Card.Header>
                 <Card.Body>
                   <Card.Title className = 'post-title'>
-                    {post.title}
+                    {post?.title}
                   </Card.Title>
                   <Card.Text className = 'post-content'>
-                    {post.image && <img className = 'post-image' src = {post.image} alt = 'post'/>}
-                    {post.content}
+                    <img className = 'post-image' src = {post?.image} alt = 'post'/>
+                    {post?.content}
                   </Card.Text>
                   <Card.Text>
                     <Button onClick={()=>{goToComment(post?._id)}}>Comment<Badge bg='seconday'>{post?.comments}</Badge></Button>
