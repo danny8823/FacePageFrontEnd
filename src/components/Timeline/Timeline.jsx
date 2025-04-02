@@ -11,6 +11,7 @@ import { Button } from '@mui/material'
 
 const Timeline = () => {
   const {user} = useSelector((state) => state?.auth?.user)
+  console.log('this is user')
   const navigate = useNavigate();
 
   const {data:posts, isError, isLoading, error} = useQuery({

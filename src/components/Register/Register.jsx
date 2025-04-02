@@ -44,7 +44,7 @@ const Register = () => {
                 .then((data)=>{
                     console.log('data', data)
                     dispatch(loginAction(data))
-                    navigate('/dashboard')
+                    navigate('/')
                 })
                 .catch((error)=>{
                     console.log(error)
