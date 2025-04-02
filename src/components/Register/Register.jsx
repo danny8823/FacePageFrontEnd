@@ -3,14 +3,16 @@ import { useFormik } from 'formik'
 import { useMutation } from '@tanstack/react-query'
 import { registerAPI } from '../../services/userServices'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import * as Yup from 'yup'
 import { Alert, Button } from '@mui/material'
 import CheckIcon from '@mui/icons-material/Check'
 import './Register.css'
+import { loginAction } from '../../redux/slice/authSlice'
 
 const Register = () => {
     const navigate = useNavigate()
-
+    const dispatch = useDispatch()
     const {mutateAsync, isPending, isError, error, isSuccess} = useMutation({
         mutationFn: registerAPI,
         mutationKey: ['register']
@@ -41,6 +43,7 @@ const Register = () => {
             mutateAsync(values)
                 .then((data)=>{
                     console.log('data', data)
+                    dispatch(loginAction(data))
                     navigate('/dashboard')
                 })
                 .catch((error)=>{

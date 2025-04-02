@@ -27,7 +27,7 @@ const Timeline = () => {
     <Navbar/>
       <div className = 'body'>
         <div className = 'left-bar'>
-          <Link><img className = 'user-img' src = {user.image} alt = 'face-image'/>{user && user.username ? user.username : 'guest'}</Link>
+          <Link><img className = 'user-img' src = {user?.image} alt = 'face-image'/>{user && user.username ? user.username : 'guest'}</Link>
         </div>
         <div className = 'timeline'>
           {isLoading && <p>Loading posts....</p>}
