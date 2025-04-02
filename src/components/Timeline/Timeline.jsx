@@ -49,8 +49,12 @@ const Timeline = () => {
                     {post?.title}
                   </Card.Title>
                   <Card.Text className = 'post-content'>
-                    <img className = 'post-image' src = {post?.image} alt = 'post'/>
-                    {post?.content}
+                  {post.image ? (
+  <img className="post-image" src={post.image} alt="post" onError={(e) => e.target.src = 'https://placehold.co/250x250'} />
+) : (
+  <img className="post-image" src='https://placehold.co/250x250' alt="fallback" />
+)}
+                    {post.content}
                   </Card.Text>
                   <Card.Text>
                     <Button onClick={()=>{goToComment(post?._id)}}>Comment<Badge bg='seconday'>{post?.comments}</Badge></Button>
